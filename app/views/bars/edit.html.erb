@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Make changes to <%= @bar.name %></h2>
+      <small>Click <%= link_to 'here', @bar, method: :delete %> to delete this bar</small>
+      <%= render 'form', record: @bar %>
+    </div>
+  </div>
+</div>

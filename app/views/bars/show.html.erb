@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2><%= @bar.name %></h2>
+      <p><%= @bar.address %></p>
+      <% if @bar.owner == current_user %>
+        <small><%= link_to "(change your bar)", edit_bar_path(@bar) %></small>
+      <% end %>
+    </div>
+  </div>
+</div>

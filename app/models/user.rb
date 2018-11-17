@@ -8,5 +8,4 @@ class User < ApplicationRecord
            inverse_of: :owner,
            class_name: "Bar",
            foreign_key: "owner_id"
-
 end

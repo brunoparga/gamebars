@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :owned_bars,
            inverse_of: :owner,
            class_name: "Bar",
-           foreign_key: "owner_id"
+           foreign_key: "owner_id",
+           dependent: :destroy
 end

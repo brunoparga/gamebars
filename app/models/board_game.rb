@@ -1,5 +1,5 @@
 class BoardGame < ApplicationRecord
-  has_many :bar_board_games
+  has_many :bar_board_games, dependent: :destroy
   has_many :bars, through: :bar_board_games
   validates :min_players, numericality: { only_integer: true }
   validates :max_players,

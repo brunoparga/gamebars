@@ -5,6 +5,7 @@ unless Rails.env.production?
   Bar.destroy_all
   User.destroy_all
 
+  puts 'Creating users...'
   me = User.create!(
     email: 'brunoparga@gmail.com',
     password: 'senhasenha',
@@ -19,6 +20,7 @@ unless Rails.env.production?
     last_name: 'Brahemcha'
   )
 
+  puts 'then create bars...'
   conexion = Bar.create!(
     name: 'Conexión Berlin',
     address: 'Ayacucho 1571, Buenos Aires',
@@ -31,6 +33,114 @@ unless Rails.env.production?
     owner: lu
   )
 
+  puts 'next, create some games...'
+  settlers_of_catan = BoardGame.create!(
+    name: 'Settlers of Catan',
+    min_players: 3,
+    max_players: 4,
+    optimal_players: 4,
+    min_playing_time: 60,
+    max_playing_time: 120
+  )
 
+  carcassonne = BoardGame.create!(
+    name: 'Carcassonne',
+    min_players: 2,
+    max_players: 5,
+    optimal_players: 2,
+    min_playing_time: 30,
+    max_playing_time: 45
+  )
 
+  love_letter = BoardGame.create!(
+    name: 'Love Letter',
+    min_players: 2,
+    max_players: 4,
+    optimal_players: 4,
+    min_playing_time: 20,
+    max_playing_time: 20
+  )
+
+  istanbul = BoardGame.create!(
+    name: 'Istanbul',
+    min_players: 2,
+    max_players: 5,
+    optimal_players: 4,
+    min_playing_time: 40,
+    max_playing_time: 60
+  )
+
+  dominion = BoardGame.create!(
+    name: 'Dominion',
+    min_players: 2,
+    max_players: 4,
+    optimal_players: 3,
+    min_playing_time: 30,
+    max_playing_time: 30
+  )
+
+  zendo = BoardGame.create!(
+    name: 'Zendo',
+    min_players: 3,
+    max_players: 5,
+    optimal_players: 4,
+    min_playing_time: 60,
+    max_playing_time: 60
+  )
+
+  puerto_rico = BoardGame.create!(
+    name: 'Puerto Rico',
+    min_players: 2,
+    max_players: 5,
+    optimal_players: 4,
+    min_playing_time: 90,
+    max_playing_time: 150
+  )
+
+  diplomacy = BoardGame.create!(
+    name: 'Diplomacy',
+    min_players: 6,
+    max_players: 7,
+    optimal_players: 7,
+    min_playing_time: 360,
+    max_playing_time: 360
+  )
+
+  king_of_tokyo = BoardGame.create!(
+    name: 'King of Tokyo',
+    min_players: 2,
+    max_players: 6,
+    optimal_players: 4,
+    min_playing_time: 30,
+    max_playing_time: 30
+  )
+
+  puts 'finally, create menus of games in bars'
+  ludus_games =
+    { ludus =>
+        [settlers_of_catan,
+         carcassonne,
+         istanbul,
+         dominion,
+         puerto_rico,
+         king_of_tokyo] }
+
+  conexion_games =
+    { conexion =>
+        [settlers_of_catan,
+         love_letter,
+         zendo,
+         diplomacy,
+         dominion,
+         king_of_tokyo] }
+
+  [ludus_games, conexion_games].each do |game_list|
+    game_list.each do |bar, games|
+      games.each do |game|
+        BarBoardGame.create!(bar: bar, board_game: game)
+      end
+    end
+  end
+
+  puts 'Done seeding!'
 end

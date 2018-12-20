@@ -23,13 +23,15 @@ unless Rails.env.production?
   puts 'then create bars...'
   conexion = Bar.create!(
     name: 'Conexión Berlin',
-    address: 'Ayacucho 1571, Buenos Aires',
+    address: 'Ayacucho 1571',
+    city: 'Buenos Aires',
     owner: me
   )
 
   ludus = Bar.create!(
     name: 'Ludus luderia',
-    address: 'Rua Treze de Maio, 972 São Paulo',
+    address: 'Rua Treze de Maio, 972',
+    city: 'São Paulo',
     owner: lu
   )
 

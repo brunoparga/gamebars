@@ -3,8 +3,10 @@ class BarsController < ApplicationController
   before_action :set_bar, only: %i[show edit update destroy]
 
   def index
-    @city = params[:city]
-    @bars = Bar.all
+    @city = params[:city].titleize
+    city_bars = Bar.where(city: @city)
+    @found_bars = !city_bars.empty?
+    @bars = @found_bars ? city_bars : Bar.all
   end
 
   def show; end

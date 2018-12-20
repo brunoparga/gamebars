@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <h3>Game bars in <%= @city %> available tonight</h3>
-      <!-- TODO: include date -->
+      <% if @found_bars %>
+        <h3>Game bars in <%= @city %> available tonight:</h3>
+        <!-- TODO: include date -->
+      <% else %>
+        <h4>Sorry, we still don't have any bars in <%= @city %>. Here are all our bars:</h4>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <!-- TODO: turn this into cards -->

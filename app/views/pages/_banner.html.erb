@@ -1,0 +1,11 @@
+<!-- TODO: move searchbox into its own partial for reuse within index -->
+<div class="banner">
+  <div class="banner-content">
+    <h1>Find your next board game bar!</h1>
+    <%= form_tag("/bars", method: :get, class: "form-group form-inline") do %>
+      <%= text_field_tag(:city, '', class: "form-control", placeholder: "City") %>
+      <!-- TODO: add date to search -->
+      <%= submit_tag("Game on!", class: "btn btn-primary btn-lg") %>
+    <% end %>
+  </div>
+</div>

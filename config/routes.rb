@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'bars#index'
+  root to: 'pages#home'
   resources :users, only: [] do
     resources :bars, only: %i[new create]
   end
-  resources :bars, only: %i[show edit update destroy]
+  resources :bars, only: %i[index show edit update destroy]
 end

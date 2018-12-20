@@ -3,6 +3,7 @@ class BarsController < ApplicationController
   before_action :set_bar, only: %i[show edit update destroy]
 
   def index
+    @city = params[:city]
     @bars = Bar.all
   end
 

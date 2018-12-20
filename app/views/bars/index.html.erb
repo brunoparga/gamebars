@@ -1,7 +1,20 @@
-<%= render 'bars/banner' %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <h3>Game bars in <%= @city %> available tonight</h3>
+      <!-- TODO: include date -->
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <!-- TODO: turn this into cards -->
+      <ul>
+        <% @bars.each do |bar| %>
+          <li>
+            <%= link_to bar do %>
+              <%= bar.name %> - <%= bar.board_games.count %> games available
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

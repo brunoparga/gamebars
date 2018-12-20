@@ -6,15 +6,11 @@
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <!-- TODO: turn this into cards -->
-      <ul>
+      <div class="bar-cards">
         <% @bars.each do |bar| %>
-          <li>
-            <%= link_to bar do %>
-              <%= bar.name %> - <%= bar.board_games.count %> games available
-            <% end %>
-          </li>
+          <%= render 'card', bar: bar %>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 </div>

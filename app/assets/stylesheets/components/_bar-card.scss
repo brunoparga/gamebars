@@ -1,0 +1,17 @@
+.bar-card {
+  position: relative;
+  background: $light-gray;
+  height: 200px;
+  width: 360px;
+  border: 1px solid $gray;
+  margin: 20px;
+}
+
+.bar-games {
+  margin: 30px auto;
+}
+
+.bar-address {
+  position: absolute;
+  bottom: 5px;
+}

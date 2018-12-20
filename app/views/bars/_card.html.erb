@@ -1,0 +1,7 @@
+<%= link_to bar do %>
+  <div class="bar-card">
+    <h4><%= bar.name %></h4>
+    <p class="bar-games"><%= bar.board_games.count %> games available!</p>
+    <p class="bar-address"><%= bar.address %></p>
+  </div>
+<% end %>

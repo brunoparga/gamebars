@@ -25,6 +25,7 @@ unless Rails.env.production?
     name: 'Conexión Berlin',
     address: 'Ayacucho 1571',
     city: 'Buenos Aires',
+    opening_hours: 'Saturdays 22h ─ 05h',
     owner: me
   )
 
@@ -32,6 +33,7 @@ unless Rails.env.production?
     name: 'Ludus luderia',
     address: 'Rua Treze de Maio, 972',
     city: 'São Paulo',
+    opening_hours: 'Wed-Thu 18h ─ 00h, Fri-Sat 18h ─ 03h, Sun 16h ─ 00h. Open on holidays and the day before',
     owner: lu
   )
 

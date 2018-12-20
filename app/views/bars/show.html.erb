@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <h2><%= @bar.name %></h2>
-      <p><%= @bar.address %></p>
+      <h2>Book your visit at <%= @bar.name %></h2>
+      <p>Opening hours: <%= @bar.opening_hours %></p>
+      <p><%= @bar.address %> - <%= @bar.city %></p>
       <% if @bar.owner == current_user %>
         <small><%= link_to "(change your bar)", edit_bar_path(@bar) %></small>
       <% end %>

@@ -1,5 +1,6 @@
 AllCops:
   Exclude:
+    - '**/*.erb'
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'

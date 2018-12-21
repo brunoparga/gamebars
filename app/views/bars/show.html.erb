@@ -1,12 +1,41 @@
-<div class="container">
+<div class="container" id="bar-show-page">
+
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <h2>Book your visit at <%= @bar.name %></h2>
-      <p>Opening hours: <%= @bar.opening_hours %></p>
-      <p><%= @bar.address %> - <%= @bar.city %></p>
-      <% if @bar.owner == current_user %>
-        <small><%= link_to "(change your bar)", edit_bar_path(@bar) %></small>
-      <% end %>
+      <div class="text-center">
+        <h2>Book your visit at <%= @bar.name %></h2>
+        <% if @bar.owner == current_user %>
+          <small><%= link_to "(change your bar)", edit_bar_path(@bar) %></small>
+        <% end %>
+      </div>
     </div>
   </div>
+
+  <div class="row">
+    <!-- TODO: make this work on mobile -->
+    <div class="col-xs-12">
+      <div id="bar-show-container">
+        <div id="map-placeholder">Map placeholder</div>
+        <div id="bar-data">
+          <p>Opening hours: <%= @bar.opening_hours %></p>
+          <p><%= @bar.address %> - <%= @bar.city %></p>
+          <p>Games available:</p>
+          <!-- TODO: make this take a fixed height (with a scrollbar?) -->
+          <!-- IDEA: segregate board game information to a show page (with link back to bar) -->
+          <ul>
+            <% @bar.board_games.each do |game| %>
+              <%= render 'board_games/card', game: game %>
+            <% end %>
+          </ul>
+
+          <%= link_to '#' do %>
+            <div class="btn btn-primary" id="btn-booking">
+              <strong>Confirm your booking</strong>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

@@ -26,6 +26,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
@@ -36,5 +37,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'simplecov', require: false
 end

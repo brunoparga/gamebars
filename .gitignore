@@ -15,3 +15,4 @@ yarn-error.log
 .env*
 gamebars-spec
 coverage
+spec/examples.txt

@@ -28,6 +28,7 @@ end
 group :development, :test do
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
   gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
   gem 'pry-rails'

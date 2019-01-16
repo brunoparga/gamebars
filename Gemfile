@@ -39,6 +39,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
 end

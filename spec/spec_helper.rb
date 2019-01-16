@@ -22,4 +22,5 @@ RSpec.configure do |config|
   config.default_formatter = "doc" if config.files_to_run.one?
   config.order = :random
   Kernel.srand config.seed
+  config.before(:all) { Faker::Config.random = Random.new(config.seed) }
 end

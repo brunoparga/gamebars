@@ -5,7 +5,7 @@ RSpec.feature 'Visitor comes to the home page' do
     let(:owner) { FactoryBot.create(:user) }
     let(:bar) { FactoryBot.create(:bar, owner: owner) }
 
-    it "shows bars available in that city" do
+    it 'shows bars available in that city' do
       visit root_path
       fill_in('City', with: bar.city)
       click_button('Game on!')

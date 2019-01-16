@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+# Back-end gems
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -9,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 
+# Front-end gems
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
@@ -24,10 +26,20 @@ group :development do
 end
 
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'listen', '~> 3.0.5'
+  gem 'rspec-rails', '~> 3.8'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false
 end

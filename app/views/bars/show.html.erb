@@ -3,9 +3,11 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="text-center">
-        <h2>Book your visit at <%= @bar.name %></h2>
         <% if @bar.owner == current_user %>
-          <small><%= link_to "(change your bar)", edit_bar_path(@bar) %></small>
+          <h2>This is your bar, <%= @bar.name %></h2>
+          <small><%= link_to "(edit your bar)", edit_bar_path(@bar) %></small>
+        <% else %>
+        <h2>Book your visit at <%= @bar.name %></h2>
         <% end %>
       </div>
     </div>

@@ -1,5 +1,7 @@
 <%= simple_form_for record do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.submit %>
+  <%= f.input :city %>
+  <%= f.input :opening_hours %>
+  <%= f.submit 'Create bar', id: 'create-bar' %>
 <% end %>
